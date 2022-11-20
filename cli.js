@@ -29,7 +29,7 @@ if (args.j){
     console.log(data);
     process.exit(0);
 } else {
-    const days = args.d || 1;
+    const days = args.d;
     console.log(data.daily.precipitation_hours[days] > 0 ? "You might need your galoshes " : "You will not need your galoshes ");
 
     if (days == 0) {
