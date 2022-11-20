@@ -24,18 +24,19 @@ const longitude = Math.abs(args.e) || Math.abs(args.w) * -1 || -79.0;
 const response = await fetch('https://api.open-meteo.com/v1/forecast?latitude=' + latitude + '&longitude=' + longitude + '&daily=precipitation_hours&timezone=' + timezone);
 const data = await response.json();
 
+
 if (args.j){
     console.log(data);
     process.exit(0);
 } else {
     const days = args.d || 1;
-    const ans = data.daily.precipitation_hours[days] > 0 ? "You might need your galoshes " : "You will not need your galoshes ";
+    console.log(data.daily.precipitation_hours[days] > 0 ? "You might need your galoshes " : "You will not need your galoshes ");
 
     if (days == 0) {
-    console.log(ans + "today.")
+    console.log("today.")
     } else if (days > 1) {
-    console.log(ans + "in " + days + " days.")
+    console.log("in " + days + " days.")
     } else {
-    console.log(ans + "tomorrow.")
+    console.log("tomorrow.")
     }
 }
