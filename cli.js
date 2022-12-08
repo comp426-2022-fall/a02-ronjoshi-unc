@@ -18,6 +18,8 @@ if(args.h) {
 }
 
 const timezone = args.z || moment.tz.guess();
+
+// changes it so that S, W is always negative
 const latitude = Math.abs(args.n) || Math.abs(args.s) * -1;
 const longitude = Math.abs(args.e) || Math.abs(args.w) * -1;
 
