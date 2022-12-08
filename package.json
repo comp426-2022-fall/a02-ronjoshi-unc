@@ -4,7 +4,7 @@
   "description": "first npm package",
   "main": "index.js",
   "scripts": {
-    "test": "node cli.js -n 35.92 -w 79.05 -z America/New_York"
+    "test": "node cli.js -n 35.92 -w 79.05 -z"
   },
   "repository": {
     "type": "git",
